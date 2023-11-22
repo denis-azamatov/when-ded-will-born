@@ -1,0 +1,23 @@
+@import 'normalize.css';
+
+@font-face {
+  font-family: 'digital-7';
+  src: url('./assets/fonts/digital-7 (mono).ttf');
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: #de1024;
+  text-align: center;
+  font-family: 'digital-7', 'sans-serif';
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
