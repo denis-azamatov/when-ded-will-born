@@ -21,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+import { onBeforeUnmount, ref } from 'vue';
 import Countdown from './components/Countdown.vue';
 
 function compareDate(first: Date, secondDate: Date): boolean {
@@ -33,7 +34,7 @@ function compareDate(first: Date, secondDate: Date): boolean {
  * Returns next bday or null if it is today
  */
 function getNext() {
-  const now = new Date(2023, 10, 26);
+  const now = new Date();
   const currentYear = now.getFullYear();
 
   let target = new Date(currentYear, 10, 26);
@@ -49,7 +50,15 @@ function getNext() {
   return new Date(currentYear + 1, 10, 26);
 }
 
-const date = getNext();
+const date = ref(getNext());
+
+const interval = window.setInterval(() => {
+  date.value = getNext();
+}, 1000);
+
+onBeforeUnmount(() => {
+  clearInterval(interval);
+})
 </script>
 
 
