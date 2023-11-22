@@ -3,13 +3,13 @@
     <Countdown v-if="date" :date="date"></Countdown>
     <div v-else>
       <div>
-        <img loading="lazy" class="gif1" src="./assets/gifs/gif1.gif" alt="">
-        <img loading="lazy" class="gif2" src="./assets/gifs/gif2.gif" alt="">
-        <img loading="lazy" class="gif3" src="./assets/gifs/gif3.gif" alt="">
-        <img loading="lazy" class="gif4" src="./assets/gifs/gif4.gif" alt="">
-        <img loading="lazy" class="gif5" src="./assets/gifs/gif5.gif" alt="">
-        <img loading="lazy" class="gif7" src="./assets/gifs/gif7.webp" alt="">
-        <img loading="lazy" class="gif6" src="./assets/gifs/gif6.gif" alt="">
+        <img loading="lazy" class="gif1" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif1.gif" alt="">
+        <img loading="lazy" class="gif2" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif2.gif" alt="">
+        <img loading="lazy" class="gif3" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif3.gif" alt="">
+        <img loading="lazy" class="gif4" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif4.gif" alt="">
+        <img loading="lazy" class="gif5" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif5.gif" alt="">
+        <img loading="lazy" class="gif7" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif7.webp" alt="">
+        <img loading="lazy" class="gif6" src="https://s3.eu-central-1.amazonaws.com/ded.gifs/gif6.gif" alt="">
       </div>
       <div class="title">
         <p>
