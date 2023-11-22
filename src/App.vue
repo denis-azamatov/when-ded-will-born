@@ -33,7 +33,7 @@ function compareDate(first: Date, secondDate: Date): boolean {
  * Returns next bday or null if it is today
  */
 function getNext() {
-  const now = new Date();
+  const now = new Date(2023, 10, 26);
   const currentYear = now.getFullYear();
 
   let target = new Date(currentYear, 10, 26);
