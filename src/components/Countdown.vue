@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, ref } from 'vue';
+import { computed, onBeforeUnmount, ref } from 'vue';
 
 const props = defineProps({
     date: {
@@ -42,7 +42,6 @@ const interval = window.setInterval(() => {
     now.value = Math.trunc((new Date()).getTime() / 1000);
 }, 1000);
 
-
 const seconds = computed(() => (target - now.value) % 60);
 const minutes = computed(() => Math.trunc(((target - now.value) / 60) % 60));
 const hours = computed(() => Math.trunc(((target - now.value) / 60 / 60) % 24));
@@ -54,24 +53,26 @@ function format(value: number) {
     }
     return value.toString();
 }
+
+onBeforeUnmount(() => {
+    clearInterval(interval);
+})
 </script>
 
 <style scoped>
-
-
 .block {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
 }
 
-.digit{
+.digit {
     font-size: 6rem;
     white-space: pre;
     margin: 0;
 }
 
-.label{
+.label {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
@@ -80,22 +81,22 @@ function format(value: number) {
 }
 
 @media screen and (max-width: 768px) {
-  .digit {
-    font-size: 4rem;
-  }
+    .digit {
+        font-size: 4rem;
+    }
 
-  .label{
-    font-size: 1.5rem;
-  }
+    .label {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 520px) {
-  .digit {
-    font-size: 3rem;
-  }
+    .digit {
+        font-size: 3rem;
+    }
 
-  .label{
-    font-size: 1rem;
-  }
+    .label {
+        font-size: 1rem;
+    }
 }
 </style>
